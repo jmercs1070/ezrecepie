@@ -1,49 +1,53 @@
-const input = document.getElementById("userInput")
+    const input = document.getElementById("userInput")
 
-const btn = document.getElementById("button")
+    const btn = document.getElementById("button")
 
-const body = document.getElementById("body")
+    const body = document.getElementById("body")
 
-    btn.addEventListener('click', clickedOn )
+        btn.addEventListener('click', clickedOn )
 
-    input.addEventListener('keydown', (event)=>{
-        if(event.keyCode === 13){
-            clickedOn()
+        input.addEventListener('keydown', (event)=>{
+            if(event.keyCode === 13){
+                clickedOn()
+            }
+
+    })
+
+
+    const currentIngredients = []
+    //submitbutton function
+    function clickedOn()
+    {
+
+    // creates ingredient button and displays on the page
+        const newButton = document.createElement('button')
+        newButton.innerHTML = input.value
+        body.appendChild(newButton)
+
+        //Adds ingredient to array of ingredients
+        currentIngredients.push(input.value)
+        console.log(currentIngredients)
+
+        //Asks if theres more than 1 item, then appends button onto screen
+        const areYouDoneButton = document.createElement('button');
+        if(currentIngredients.length > 1){
+            body.appendChild(areYouDoneButton)
+            areYouDoneButton.innerHTML = "Are you done? If so, click this button to move on!"
         }
 
-})
+        //When recipies are revealed aka when are you done button is clicked
 
-function clickedOn()
-{
-   
-    const newButton = document.createElement('button')
-    newButton.innerHTML = input.value
-    body.appendChild(newButton)
-
-    const currentIngredients = [ ]
-    currentIngredients.push(input.value)
-     
-    console.log(currentIngredients)
-
-    if(currentIngredients.length >= 1 && currentIngredients.length < 2){
-        const areYouDoneButton = document.createElement('button')
-        body.appendChild(areYouDoneButton)
-        areYouDoneButton.innerHTML = "Are you done? If so, click this button to  move on!"
+        areYouDoneButton.addEventListener('click', ()=>{
+            if(currentIngredients.length === 1){
+                alert("You don't have any ingredients, make sure to add some!")
+                body.appendChild(areYouDoneButton)
+                areYouDoneButton.innerHTML = "Are you done? If so, click this button to move on!"
+            }
+            
+            //shows recipies
+        })
+        
+            input.value = " "
+    
+    //END OF FUNCTION
     }
-
-    input.value = " "
-
-    //random stuff
-    switch(input.value) {
-        case 'joandy is cool':
-        alert('joandy is cool thx m8')
-        break;
-
-        case 'change': 
-        document.body.style.backgroundColor = 'red'
-        break;
-        case 'patrick is the best':
-        alert('patrick is cooler ')
-    }
-    //end of random stuff
-}
