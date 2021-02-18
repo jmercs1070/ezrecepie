@@ -15,6 +15,8 @@
 
 
     const currentIngredients = []
+
+
     //submitbutton function
     function clickedOn()
     {
@@ -28,26 +30,30 @@
         currentIngredients.push(input.value)
         console.log(currentIngredients)
 
-        //Asks if theres more than 1 item, then appends button onto screen
-        const areYouDoneButton = document.createElement('button');
-        if(currentIngredients.length > 1){
-            body.appendChild(areYouDoneButton)
-            areYouDoneButton.innerHTML = "Are you done? If so, click this button to move on!"
+        input.value = " "
         }
 
         //When recipies are revealed aka when are you done button is clicked
-
+        const areYouDoneButton = document.getElementById('areYouDoneButton')
         areYouDoneButton.addEventListener('click', ()=>{
-            if(currentIngredients.length === 1){
+            //Checks if there is no ingredients added
+            if(currentIngredients.length === 0){
                 alert("You don't have any ingredients, make sure to add some!")
                 body.appendChild(areYouDoneButton)
-                areYouDoneButton.innerHTML = "Are you done? If so, click this button to move on!"
             }
             
             //shows recipies
+            switch (input.value) {
+                case 'lol':
+                alert('what\'s so funny?')
+                break;
+
+                case 'change background':
+                
+            }
         })
         
-            input.value = " "
+            
     
-    //END OF FUNCTION
-    }
+
+    
