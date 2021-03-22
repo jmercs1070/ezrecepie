@@ -1,4 +1,6 @@
  
+    //https://api.spoonacular.com/recipes/716429/information?includeNutrition=false => Potential API
+    
     const input = document.getElementById("userInput")
 
     const btn = document.getElementById("button")
@@ -27,6 +29,7 @@
     
         //creates button and appends onto screen
         const newButton = document.createElement('button')
+        newButton.style.innerHTML = "background-color: green;"
         newButton.innerHTML = input.value
         body.appendChild(newButton)
 
@@ -48,6 +51,7 @@
             const myJson = await response.json()
         
         console.log(myJson)
+        
         input.value = " "
 
         
@@ -64,24 +68,58 @@
                 alert("You don't have any ingredients, make sure to add some!")
             }
             //////////////////////////////////////////////////////////////////////////////////////
-            console.log("pp")
-            const newApiKey = "?apiKey=18efb75d9bc148839a7c86210c422a0c"
-            let newURL = "https://api.spoonacular.com/recipes/" + "/analyzedInstructions" + newApiKey "&stepBreakdown=true"
-            const newIngredientConnection = async () => {
-                const newResponse = await fetch(newURL);
-                const newMyJson = await newResponse.json()
-                console.log(newMyJson)
-            }
-                for(item of myJson){
-                const dataGotBack = []
-                dataGotBack.push(item) 
-                console.log(dataGotBack[0].id)
-                let newURL = "https://api.spoonacular.com/recipes/" + dataGotBack[0].id +  "/analyzedInstructions" + newApiKey + "&stepBreakdown=true"
-                newIngredientConnection()
-            }
 
+            const newApiKey = "?apiKey=18efb75d9bc148839a7c86210c422a0c"
+
+                for(const item of myJson){
+                let newURL = "https://api.spoonacular.com/recipes/" + item.id +  "/analyzedInstructions" + newApiKey
+            
+            const newIngredientConnection = async () => {
+                const newResponse = await fetch(newURL)
+                const newMyJson = await newResponse.json()
+
+                console.log(newMyJson)
+                //Document stuff
+                const div = document.createElement("div")
+                body.appendChild(div)
+                const image = document.createElement("img")
+                div.appendChild(image)
+                image.src = item.image
+    
+                const stepsListOl = document.createElement("ol")
+
+                for(const item of newMyJson){
+                const stepList = item.steps
+
+                        
+                            for(actualStep of stepList){
+                                if(!actualStep.length) continue;   
+                            
+                                console.log(newMyJson)
+                                const stepText = document.createElement("li")
+                                stepText.innerHTML = actualStep.step
+                                stepsListOl.appendChild(stepText)
+                                div.appendChild(stepsListOl)
+        
+                        } 
+                    }
+            
+        //ingredientconnection
+            }
+            /////
+            newIngredientConnection()
+        
+
+    //forloop
+        }
+        ///////
+
+
+        //Click event
+        }
+        ///////
                 
-                }
+            
             
             
     
