@@ -41,7 +41,10 @@
         const apikey = "&apiKey=18efb75d9bc148839a7c86210c422a0c"
         let ApiUrl = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + input.value + apikey
 
+ 
 
+    
+        
 
         //establish connection to the API
         
@@ -49,14 +52,24 @@
         const userAction = async () => {
             const response = await fetch(ApiUrl);
             const myJson = await response.json()
+
         
+            async function checkForExistence() {
+            if(myJson.length == 0){
+                input.value = " "
+                alert("No results found for that ingredient. Sorry!")
+                return
+            }
+        }
+        checkForExistence()
+
+          
         console.log(myJson)
+
         
         input.value = " "
 
         
-        
-  //END OF clickedOn Function 
     
         //When recipies are revealed aka when are you done button is clicked
         const areYouDoneButton = document.getElementById('areYouDoneButton')
@@ -78,6 +91,8 @@
                 const newResponse = await fetch(newURL)
                 const newMyJson = await newResponse.json()
 
+                if(newMyJson.length){
+
                 console.log(newMyJson)
                 //Document stuff
                 const div = document.createElement("div")
@@ -93,7 +108,7 @@
 
                         
                             for(actualStep of stepList){
-                                if(!actualStep.length) continue;   
+                              
                             
                                 console.log(newMyJson)
                                 const stepText = document.createElement("li")
@@ -103,6 +118,9 @@
         
                         } 
                     }
+                } else {
+                    console.log('this one did not have any items')
+                }
             
         //ingredientconnection
             }
