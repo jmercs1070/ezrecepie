@@ -104,17 +104,30 @@
                 const stepsListOl = document.createElement("ol")
 
                 for(const item of newMyJson){
-                const stepList = item.steps
-
-                        
-                            for(actualStep of stepList){
+                const stepList = item.steps                
+                            for(const actualStep of stepList){
                               
-                            
                                 console.log(newMyJson)
                                 const stepText = document.createElement("li")
                                 stepText.innerHTML = actualStep.step
                                 stepsListOl.appendChild(stepText)
                                 div.appendChild(stepsListOl)
+
+                                const ingredientsNeeded = document.createElement('p')
+
+                                ingredientsNeeded.innerHTML = "Here are the ingredients needed: " 
+
+                                const actualIngredient = actualStep.ingredients
+                                
+                                for(actualACTUALIngredient of actualIngredient){
+
+                                    console.log(actualIngredient)
+                                
+                                ingredientsNeeded.innerHTML += `${actualACTUALIngredient.name}, `
+                               
+                                div.appendChild(ingredientsNeeded)
+                                }     
+                                
         
                         } 
                     }
