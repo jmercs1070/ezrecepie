@@ -1,58 +1,32 @@
-body{
-    background: rgb(0,31,36);
-    background: linear-gradient(90deg, rgba(0,31,36,0.2497373949579832) 0%, rgba(19,240,219,1) 20%, rgba(0,212,255,1) 100%);  
-}
-
-#userInput{
-    margin: 10px;
-    position: relative;
-    left: 10px;
-}
-
-#button{
-    margin-right: 20px;
-    height: 60px;
-}
-
-.header {
-    background: #43799c;
-    color: white;
-    padding: 1.6rem 0;
-}
-
-.header_title {
-    font-size: 3.2rem;
-    margin-bottom: .4rem;
-  }
-  
-.header_subtitle {
-    font-size: 1.6rem;
-    font-weight: 300;
-}
-
-.input-group-text {
-    display: inline-block;
-    padding: 0.35em 1.2em;
-    border: 0.1em solid #FFFFFF;
-    margin: 0 0.3rem 0.3rem 0;
-    border-radius: 0.12em;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    color: #FFFFFF;
-    text-align: center;
+.buttons {
+    font-family: Tahoma;
+    background: orange;
+    cursor: pointer;
+    font-size: 1em;
+    padding: .5rem;
+    border: 1.5;
     transition: all 0.2s;
+    text-align: center;
+    border-radius: 10px;
+    box-align: center;
+    width: auto;
 }
-
-.input-group-text:hover {
-    color: #000000;
-    background-color: #FFFFFF;
+@keyframes animation {
+    0% {background-color: orange;}
+    25%{background-color: orangered;}
+    50%{background-color: red;}
+    75%{background-color: yellow;}
+    100%{background-color: gold;}
 }
+#body{
+    
 
-@media all and (max-width: 30em) {
-    .input-group-text {
-        display: block;
-        margin: 0.4em auto;
-    }
+     animation-name: animation;
+     animation-duration: 30s;
+     animation-iteration-count: infinite;
+     animation-direction: alternate-reverse;
+     animation-timing-function: linear;
+
+    
+    background: orange;
 }
