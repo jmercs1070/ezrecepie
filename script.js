@@ -1,15 +1,4 @@
- 
-
-
-
-     
-       
-       
-       
-       
-       
-       
-       
+   
        
        
        
@@ -63,7 +52,7 @@
         // console.log(currentIngredients)
 
         //Header Variables
-        const apikey = "&apiKey=18efb75d9bc148839a7c86210c422a0c"
+        const apikey = "&apiKey=616d75bdb6f645e492ceb58a0f0d7d4a"
         let ApiUrl = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + input.value + apikey
 
  
@@ -107,7 +96,7 @@
             }
             //////////////////////////////////////////////////////////////////////////////////////
 
-            const newApiKey = "?apiKey=18efb75d9bc148839a7c86210c422a0c"
+            const newApiKey = "?apiKey=616d75bdb6f645e492ceb58a0f0d7d4a"
 
                 for(const item of myJson){
                 let newURL = "https://api.spoonacular.com/recipes/" + item.id +  "/analyzedInstructions" + newApiKey
@@ -169,6 +158,13 @@
         
                         } 
                     }
+
+                    for(text of div.children){
+                        if(text.tagName === "OL" || text.tagName === "P"){
+                        text.classList.add("text")
+                        }
+                    }
+
                 } else {
                     // console.log('this one did not have any items')
                 }
@@ -197,10 +193,3 @@
         
     
     }  
-        
-
-        
-            
-    
-
-    
