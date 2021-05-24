@@ -20,6 +20,27 @@
   <h1 class="display-5 fw-bold">Ez Recepie</h1>
   <div class="col-lg-6 mx-auto">
     <p class="lead mb-4">Quickly type in your ingredients, and get instant recipies to impress your family or something!</p>
+    <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/images/Meal-Prep-Egg-and-Sausage-McMuffin-4-500x500.jpg" class="d-block w-100" alt="..." width="450px" height="450px">
+        </div>
+        <div class="carousel-item">
+          <img src="/images/Low-carb-Chicken-Meal-Prep-Bowls-Primavera-Kitchen-3-500x500.jpg" class="d-block w-100" alt="..." width="450px" height="450px">
+        </div>
+        <div class="carousel-item">
+          <img src="/images/tastyShrimp.jpg" class="d-block w-100" alt="..." height="450px" width="450px">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
       <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3"><a href="#search"></a>Let's Search!</button>
     </div>
@@ -33,27 +54,32 @@
   <div class="col-lg-6 mx-auto">
     <p class="lead mb-4"></p>
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-      <div class="input-group mb-3" id = "hehe">
-        <input id="userInput"type="text" class="form-control" placeholder="Your Ingredients!" aria-label="Recipient's username" aria-describedby="basic-addon2">
-        <button id="button" class="example">Click to Add ingredient(s)</button>
-      </div>
-     
+       
     </div>
-    <div id = 'cacapoopoo'></div>
+   
+    
+      <div class="input-group mb-3" id = "hehe">
+       
+        <input id="userInput"type="text" class="form-control" placeholder="Your Ingredients!" aria-label="Recipient's username" aria-describedby="basic-addon2">
+      
+        <button id="button" class="example">Click to Add ingredient(s)</button>
+       
+      </div>
+    
+    
     
     </div>
+    <div id = 'cacapoopoo'></div>
+    <br>
+    <br>
     <button id="searchButton" class="example">Click this button if you are finished adding ingredients!</button>
-    <br>
-   
-
-   
-    <br>
+    
 
   </div>
   </div>
 </div>
 
-<div class="b-example-divider"></div>
+
 
 <script src='./script.js'></script>
 

@@ -43,9 +43,10 @@
     
         //creates button and appends onto screen
         const newButton = document.createElement('button')
-        newButton.style.backgroundColor = 'Red'
+        const textDiv = document.getElementById("cacapoopoo")
+        newButton.classList.add("example")
         newButton.innerHTML = input.value
-        body.appendChild(newButton)
+        textDiv.appendChild(newButton)
 
         //Adds ingredient to array of ingredients
         currentIngredients.push(input.value)
@@ -119,7 +120,12 @@
                 const div = document.createElement("div")
                 body.appendChild(div)
                 const image = document.createElement("img")
+                image.classList.add("card-img-top")
+                image.style.width = "500px"
                 div.appendChild(image)
+                div.classList.add("card")
+
+                
                 image.src = item.image
     
                 const stepsListOl = document.createElement("ol")
@@ -162,6 +168,7 @@
                     for(text of div.children){
                         if(text.tagName === "OL" || text.tagName === "P"){
                         text.classList.add("text")
+                        text.classList.add("card-text")
                         }
                     }
 
