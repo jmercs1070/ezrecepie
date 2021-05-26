@@ -107,11 +107,10 @@
                 const newResponse = await fetch(newURL)
                 const newMyJson = await newResponse.json()
                 
-
                
 
               
-              
+            //   console.log(newMyJson.steps[0])
 
                 if(newMyJson.length){
 
@@ -147,9 +146,7 @@
                                 
 
                                 const actualIngredient = actualStep.ingredients
-                                if (actualIngredient.length <=1){
-                                    continue
-                                }
+                                
 
                                 for(ingredientsToDisplay of actualIngredient){
 
